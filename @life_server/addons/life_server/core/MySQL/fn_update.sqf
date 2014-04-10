@@ -18,6 +18,7 @@ switch (_side) do
 {
 	case west: {_misc = [_this,6,[],[[]]] call BIS_fnc_param;};
 	case civilian: {_misc = [_this,6,false,[false]] call BIS_fnc_param;};
+	case independent: {_misc = false;};
 };
 
 //Error checks
@@ -55,6 +56,10 @@ switch (_side) do
 		_civGear = [_civGear] call DB_fnc_mresArray;
 		_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', civ_licenses='%4', civ_gear='%6', arrested='%7' WHERE playerid='%5'",
 		_name,_money,_bank,_licenses,_uid,_civGear,_misc];
+	};
+	case independent:
+	{
+		_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3' WHERE playerid='%6'",_name,_money,_bank,_uid];
 	};
 };
 

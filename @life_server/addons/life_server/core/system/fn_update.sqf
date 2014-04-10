@@ -24,6 +24,7 @@ switch (_side) do
 {
 	case west: {_misc = [_this,6,[],[[]]] call BIS_fnc_param;};
 	case civilian: {_misc = [_this,6,false,[false]] call BIS_fnc_param;};
+	case independent: {_misc = false;};
 };
 
 //Is the headless client active? If so let him take over.

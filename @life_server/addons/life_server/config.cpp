@@ -98,9 +98,7 @@ class CfgFunctions
 			class isUIDActive {};
 			class chopShopSell {};
 		};
-	};
-<<<<<<< HEAD
-	
+	};	
 	class STS_Atms
 	{
 		tag = "STS";
@@ -111,25 +109,6 @@ class CfgFunctions
 			class nearATM {};
 		};
 	};
-=======
-
-	class BRUUUDIS_System {
-
-        tag = "BRUUUDIS";       
-        class Bruuudis
-        {
-            file = "\life_server\core\bruuudis";
-            class add {};
-            class query {};
-            class deleteHouse {};
-            class insertHouse {};
-            class queryHouses {};
-            class queryPlayerHouses {};
-            class updateHouseStorage {};
-            class updateHouseWeaponStorage {};
-        };
-    };
->>>>>>> 8fda837a52d3d76d4c837ad4bac5ad68f7f15b3c
 };
 
 class CfgVehicles

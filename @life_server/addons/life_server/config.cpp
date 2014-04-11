@@ -99,6 +99,17 @@ class CfgFunctions
 			class chopShopSell {};
 		};
 	};
+	
+	class STS_Atms
+	{
+		tag = "STS";
+		class ATMS
+		{
+			file = "\life_server\core\ATM";
+			class atmAction {};
+			class nearATM {};
+		};
+	};
 };
 
 class CfgVehicles

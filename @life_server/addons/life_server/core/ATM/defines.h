@@ -1,0 +1,2 @@
+#define STS_ATMS ["ATM_01_F.P3D","ATM_02_F.P3D"]
+#define ASCII_COLON 58

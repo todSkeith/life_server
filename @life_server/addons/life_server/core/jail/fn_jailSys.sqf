@@ -13,4 +13,4 @@ _jailTime = [_this,2,20,[0]] call BIS_fnc_param;
 _id = owner _unit;
 
 _ret = [_unit] call life_fnc_wantedPerson;
-[[_ret,_bad,_jailTime],"life_fnc_jailMe",_id,false] spawn life_fnc_MP;
+[[_ret,_bad,_jailTime],"life_fnc_jail",_id,false] spawn life_fnc_MP;

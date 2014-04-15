@@ -250,13 +250,13 @@ compileFinal "
 	private[""_msg"",""_to""];
 	ctrlShow[3020,false];
 	_msg = ctrlText 3003;
-	_to = ""Medics"";
-	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3016,true];};
+	_to = ""The Medics"";
+	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3020,true];};
 		
 	[[_msg,name player,1],""clientMessage"",true,false] spawn life_fnc_MP;
 	[] call life_fnc_cellphone;
 	hint format[""You sent %1 a message: %2"",_to,_msg];
-	ctrlShow[3016,true];
+	ctrlShow[3020,true];
 ";
 //To All Admins
 fnc_cell_textadmin =
@@ -304,6 +304,7 @@ publicVariable "fnc_cell_textcop";
 publicVariable "fnc_cell_textadmin";
 publicVariable "fnc_cell_adminmsg";
 publicVariable "fnc_cell_adminmsgall";
+publicVariable "fnc_cell_textmedic";
 //Client Message
 /*
 	0 = private message

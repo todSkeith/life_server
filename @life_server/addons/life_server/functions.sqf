@@ -253,7 +253,7 @@ compileFinal "
 	_to = ""The Medics"";
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3020,true];};
 		
-	[[_msg,name player,1],""clientMessage"",true,false] spawn life_fnc_MP;
+	[[_msg,name player,5],""clientMessage"",true,false] spawn life_fnc_MP;
 	[] call life_fnc_cellphone;
 	hint format[""You sent %1 a message: %2"",_to,_msg];
 	ctrlShow[3020,true];

@@ -244,6 +244,20 @@ compileFinal "
 	hint format[""You sent %1 a message: %2"",_to,_msg];
 	ctrlShow[3016,true];
 ";
+//To All Medics
+fnc_cell_textmedic =
+compileFinal "
+	private[""_msg"",""_to""];
+	ctrlShow[3020,false];
+	_msg = ctrlText 3003;
+	_to = ""Medics"";
+	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3016,true];};
+		
+	[[_msg,name player,1],""clientMessage"",true,false] spawn life_fnc_MP;
+	[] call life_fnc_cellphone;
+	hint format[""You sent %1 a message: %2"",_to,_msg];
+	ctrlShow[3016,true];
+";
 //To All Admins
 fnc_cell_textadmin =
 compileFinal "
@@ -297,6 +311,7 @@ publicVariable "fnc_cell_adminmsgall";
 	2 = message to admin
 	3 = message from admin
 	4 = admin message to all
+	5 = medic message
 */
 clientMessage =
 compileFinal "
@@ -361,6 +376,17 @@ compileFinal "
 			[""AdminMessage"",[""You Have Received A Message From An Admin!""]] call bis_fnc_showNotification;
 			systemChat _message;
 			if((call life_adminlevel) > 0) then {systemChat _admin;};
+		};
+		
+		case 5 :
+		{
+			if(side player != independent) exitWith {};
+			private[""_message""];
+			_message = format[""---911 DISPATCH FROM %1: %2"",_from,_msg];
+			hint parseText format [""<t color='#316dff'><t size='2'><t align='center'>New Dispatch<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>All Medics<br/><t color='#33CC33'>From: <t color='#ffffff'>%1<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%2"",_from,_msg];
+			
+			[""PoliceDispatch"",[format[""A New Medic Request From: %1"",_from]]] call bis_fnc_showNotification;
+			systemChat _message;
 		};
 	};
 ";

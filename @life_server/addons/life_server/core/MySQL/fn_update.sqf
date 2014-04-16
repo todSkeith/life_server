@@ -59,7 +59,7 @@ switch (_side) do
 	};
 	case independent:
 	{
-		_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3' WHERE playerid='%6'",_name,_money,_bank,_uid];
+		_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3' WHERE playerid='%4'",_name,_money,_bank,_uid];
 	};
 };
 

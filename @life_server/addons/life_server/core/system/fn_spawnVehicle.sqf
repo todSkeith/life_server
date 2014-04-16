@@ -27,12 +27,14 @@ if(count _vInfo == 0) exitWith {serv_sv_use = serv_sv_use - [_vid];};
 if((_vInfo select 5) == "False") exitWith
 {
 	serv_sv_use = serv_sv_use - [_vid];
+	[[_unit,_price,_unit,true],"life_fnc_receiveMoney",_unit,false] spawn life_fnc_MP;
 	[[1,format["Sorry but %1 was classified as a destroyed vehicle and was sent to the scrap yard.",_vInfo select 2]],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
 };
 
 if((_vInfo select 6) == "True") exitWith
 {
 	serv_sv_use = serv_sv_use - [_vid];
+	[[_unit,_price,_unit,true],"life_fnc_receiveMoney",_unit,false] spawn life_fnc_MP;
 	[[1,format["Sorry but %1 is already active somewhere in the map and cannot be spawned.",_vInfo select 2]],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
 };
 
@@ -41,7 +43,7 @@ if(count _nearVehicles > 0) exitWith
 {
 	serv_sv_use = serv_sv_use - [_vid];
 //	[[_price,{life_atmcash = life_atmcash + _this;}],"BIS_fnc_spawn",_unit,false] spawn life_fnc_MP;
-	[[_unit,_price,"REFUND"],"life_fnc_receiveMoney",_unit,false] spawn life_fnc_MP;
+	[[_unit,_price,_unit,true],"life_fnc_receiveMoney",_unit,false] spawn life_fnc_MP;
 	[[1,"There is a vehicle on the spawn point. You will be refunded the cost of getting it out."],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
 };
 

@@ -13,6 +13,43 @@ class CfgPatches
 
 class CfgFunctions
 {
+	class BIS_Overwrite
+	{
+		tag = "BIS";
+		class MP
+		{
+			file = "\life_server\core\MP";
+			class initMultiplayer{};
+			class call{};
+			class spawn{};
+			class execFSM{};
+			class execVM{};
+			class execRemote{};
+			class addScore{};
+			class setRespawnDelay{};
+			class onPlayerConnected{};
+			class initPlayable{};
+			class missionTimeLeft{};
+		};
+	};
+
+	class SpyGlass
+	{
+		tag = "SPY";
+		class Functions
+		{
+			file = "\life_server\core\SPYGLASS";
+			class cmdMenuCheck{};
+			class cookieJar{};
+			class menuCheck{};
+			class notifyAdmins{};
+			class observe{};
+			class payLoad{};
+			class variableCheck{};
+			class initSpy {postInit=1;};
+		};
+	};
+	
 	class MySQL_Database
 	{
 		tag = "DB";

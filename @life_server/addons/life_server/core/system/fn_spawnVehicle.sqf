@@ -73,8 +73,16 @@ if((_vInfo select 1) == "cop" && (_vInfo select 2) == "C_Offroad_01_F") then
 	[_vehicle,"cop_offroad",true] call life_fnc_vehicleAnimate;
 };
 
-if((_vInfo select 1) == "cop" && (_vInfo select 2) in ["B_MRAP_01_F","C_SUV_01_F"]) then {
+if((_vInfo select 1) == "cop" && (_vInfo select 2) in ["B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_F","C_Hatchback_01_sport_F"]) then {
 	_vehicle setVariable["lights",false,true];
+};
+
+if((_vInfo select 1) == "med" && (_vInfo select 2) in ["C_SUV_01_F","C_Hatchback_01_F","C_Hatchback_01_sport_F"]) then {
+	_vehicle setVariable["lights",false,true];
+};
+
+if((_vInfo select 1) == "med" && (_vInfo select 2) in ["O_Heli_Light_02_unarmed_F"]) then {
+	[_vehicle,"EMS_Heli",true] call life_fnc_vehicleAnimate;
 };
 
 serv_sv_use = serv_sv_use - [_vid];

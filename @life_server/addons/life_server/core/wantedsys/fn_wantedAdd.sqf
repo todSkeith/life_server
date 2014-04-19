@@ -17,7 +17,7 @@ switch(_type) do
 {
 	case "187V": {_type = ["Attempted Vehicular Manslaughter",6500]};
 	case "187A": {_type = ["Attempted Murder",15000]};
-	case "187": {_type = ["Murder",50000]};
+	case "187": {_type = ["Murder",30000]};
 	case "901": {_type = ["Escaping Jail",4500]};
 	case "261": {_type = ["Rape",5000]};
 	case "261A": {_type = ["Attempted Rape",3000]};

@@ -31,7 +31,7 @@ switch (_side) do
 		/*
 			The same applies from the above statement!
 		*/
-		_query = format["SELECT playerid, name, cash, bankacc, civ_licenses, arrested, adminlevel, donatorlvl, civ_gear FROM players WHERE playerid='%1'",_uid];
+		_query = format["SELECT playerid, name, cash, bankacc, civ_licenses, arrested, adminlevel, donatorlvl, civ_gear, playerPosition FROM players WHERE playerid='%1'",_uid];
 	};
 	
 	case independent:

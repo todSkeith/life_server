@@ -13,6 +13,7 @@ _money = [_this,3,"0",[""]] call BIS_fnc_param;
 _bank = [_this,4,"2500",[""]] call BIS_fnc_param;
 _licenses = [_this,5,[],[[]]] call BIS_fnc_param;
 _civGear = [_this,7,[],[[]]] call BIS_fnc_param;
+_playerPosition = [_this,8,[],[[]]] call BIS_fnc_param;
 
 switch (_side) do
 {
@@ -54,8 +55,9 @@ switch (_side) do
 		if(typeName _misc == "BOOL") then {_misc = [_misc] call DB_fnc_bool;};
 		
 		_civGear = [_civGear] call DB_fnc_mresArray;
-		_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', civ_licenses='%4', civ_gear='%6', arrested='%7' WHERE playerid='%5'",
-		_name,_money,_bank,_licenses,_uid,_civGear,_misc];
+		_playerPosition = [_playerPosition] call DB_fnc_mresArray;
+		_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', civ_licenses='%4', civ_gear='%6', arrested='%7', playerPosition='%8' WHERE playerid='%5'",
+		_name,_money,_bank,_licenses,_uid,_civGear,_misc, _playerPosition];
 	};
 	case independent:
 	{

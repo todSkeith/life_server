@@ -31,7 +31,7 @@ switch (_side) do
 		/*
 			The same applies from the above statement!
 		*/
-		_query = format["SELECT playerid, name, cash, bankacc, civ_licenses, arrested, adminlevel, donatorlvl, civ_gear FROM players WHERE playerid='%1'",_uid];
+		_query = format["SELECT playerid, name, cash, bankacc, civ_licenses, arrested, adminlevel, donatorlvl, civ_gear, playerPosition FROM players WHERE playerid='%1'",_uid];
 	};
 	
 	case independent:
@@ -75,6 +75,10 @@ if(isNil {((_sql select 0) select 0)}) then
 		
 		case civilian:
 		{
+			_new = [(_ret select 9)] call DB_fnc_mresToArray; 
+			if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
+			_ret set[9,_new];
+			
 			_new = [(_ret select 8)] call DB_fnc_mresToArray;
 			if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
 			_ret set[8,_new];

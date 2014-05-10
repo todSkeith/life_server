@@ -36,7 +36,7 @@ if(count _ret > 0) then {
 	waitUntil {typeName _retHouses == "ARRAY" OR typeName _retHouses == "STRING" OR isNil "_retHouses"};
 
 	_ret set [count _ret, _retHouses];
-	
+	/*
 	diag_log "--------------SESSION--------------";
 	diag_log format["_ret 1: %1 (%2)", (_ret select 0), typeName (_ret select 0)];
 	diag_log format["_ret 1: %1 (%2)", (_ret select 1), typeName (_ret select 1)];
@@ -49,7 +49,7 @@ if(count _ret > 0) then {
 	diag_log format["_ret 8: %1 (%2)", (_ret select 8), typeName (_ret select 8)];
 	diag_log format["_ret 9: %1 (%2)", (_ret select 9), typeName (_ret select 9)];
 	diag_log "------------SESSION END------------";
-	
+	*/
 };
 
 if(!isNil "_ret") then

@@ -59,14 +59,13 @@ if(isNil {((_sql select 0) select 0)}) then
 		};
 	};	
 };
-
 if(!isNil "_ret") then
 {
-	[_ret,"life_fnc_houseSession",_ownerID,false] spawn life_fnc_MP;
+	[_ret,"life_fnc_houseSession",_uid,false] spawn life_fnc_MP;
 }
 	else
 {
-	[nil,"life_fnc_houseSession",_ownerID,false] spawn life_fnc_MP;
+	[nil,"life_fnc_houseSession",_uid,false] spawn life_fnc_MP;
 };
 //diag_log format["return : %1", _ret];	
 _ret;

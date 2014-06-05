@@ -59,6 +59,7 @@ class CfgFunctions
 			class insert{};
 			class query{};
 			class update{};
+			class quickUpdate{};
 			class numberSafe {};
 			class formatArray {};
 			class mresArray {};
@@ -115,6 +116,7 @@ class CfgFunctions
 			class query {};
 			class add {};
 			class update {};
+			class quickUpdate {};
 			class managesc {};
 			class cleanup {};
 			class timeStamp {};

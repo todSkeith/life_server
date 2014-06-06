@@ -82,7 +82,7 @@ if((_vInfo select 1) == "med" && (_vInfo select 2) in ["C_SUV_01_F","C_Hatchback
 };
 
 if((_vInfo select 1) == "med" && (_vInfo select 2) in ["O_Heli_Light_02_unarmed_F"]) then {
-	[_vehicle,"EMS_Heli",true] call life_fnc_vehicleAnimate;
+	//[_vehicle,"EMS_Heli",true] call life_fnc_vehicleAnimate; No LONGER USING
 };
 
 serv_sv_use = serv_sv_use - [_vid];

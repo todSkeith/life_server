@@ -12,6 +12,7 @@ life_DB_queue = [];
 serv_sv_use = [];
 fed_bank setVariable["fed_rob_ip",false,true];
 fed_bank setVariable["fed_locked",false,true];
+STS_Zeus removeCuratorAddons ["A3_Characters_F","A3_Characters_F_BLUFOR","A3_Characters_F_OPFOR","A3_Characters_F_Civil","A3_Characters_F_Beta","A3_Characters_F_INDEP","A3_Characters_F_Gamma","A3_UAV_F_Characters_F_Gamma","A3_Characters_F_Common","A3_Characters_F_EPA","A3_Characters_F_EPC","A3_Data_F_Curator_Characters","A3_Characters_F_Kart","A3_Modules_F_Curator_Ordnance","A3_Modules_F_Curator_Respawn","A3_Modules_F_Curator_Objectives","A3_Modules_F_Curator_Intel","A3_Modules_F_Curator_CAS","A3_Boat_F_Civilian_Boat"];
 
 //Run procedures for SQL cleanup on mission start.
 "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", "CALL resetLifeVehicles();",(call LIFE_SCHEMA_NAME)]; //Reset vehicles active state to false.

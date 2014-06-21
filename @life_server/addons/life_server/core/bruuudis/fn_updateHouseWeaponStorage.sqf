@@ -7,7 +7,7 @@
 */
 private["_sql","_query","_data","_house","_houseId"];
 _house = [_this,0] call BIS_fnc_param;
-_data = [_this,1] call BIS_fnc_param;
+_data = [_this,1,[],[[]]] call BIS_fnc_param;
 _side = civilian;
 
 _houseId = [_house] call life_fnc_getBuildID;

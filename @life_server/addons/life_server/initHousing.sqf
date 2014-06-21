@@ -37,7 +37,7 @@ onPlayerDisconnected {
 	_houses = [_uid, civilian] call BRUUUDIS_fnc_queryPlayerHouses;
 
 	{
-		_boxes = nearestObjects [(_x select 0), ["Land_Box_AmmoOld_F","Box_IND_WpsSpecial_F"], 5]; 
+		_boxes = nearestObjects [(_x select 0), ["Land_Box_AmmoOld_F","B_supplyCrate_F"], 5]; 
 		_house = (_x select 0) nearestObject "House_F"; 
 		_house setVariable ["life_locked", 1, true];
 		_house setVariable ["storage_locked", 0, true];

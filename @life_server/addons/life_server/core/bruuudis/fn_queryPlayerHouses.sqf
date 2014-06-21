@@ -46,7 +46,7 @@ if(isNil {((_sql select 0) select 0)}) then
 				
 				_storage = [(_x select 1)] call DB_fnc_mresToArray;
 				if(typeName _storage == "STRING") then {_storage = call compile format["%1", _storage];};
-				//diag_log format ["storage : %1 (%2)", _storage, typeName _storage];
+				//diag_log format ["storage : %1 (%2)", _storage, typeName _storage, storageposition];
 				
 				_weaponStorage = [(_x select 2)] call DB_fnc_mresToArray;
 				if(typeName _weaponStorage == "STRING") then {_weaponStorage = call compile format["%1", _weaponStorage];};

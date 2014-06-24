@@ -35,7 +35,7 @@ switch(_type) do
 	case "483": {_type = ["Drug Trafficking",9500]};
 	case "498H": {_type = ["Attempted Burglary",1500]};
 	case "499H": {_type = ["Burglary",9000]};
-	default {_type = [];};
+	default {_type = [_type,0]};
 };
 
 if(count _type == 0) exitWith {}; //Not our information being passed...

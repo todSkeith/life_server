@@ -15,26 +15,26 @@ if(_uid == "" OR _type == "" OR _name == "") exitWith {}; //Bad data passed.
 //What is the crime?
 switch(_type) do
 {
-	case "187V": {_type = ["Attempted Vehicular Manslaughter",6500]};
-	case "187A": {_type = ["Attempted Murder",15000]};
-	case "187": {_type = ["Murder",50000]};
-	case "901": {_type = ["Escaping Jail",4500]};
-	case "261": {_type = ["Rape",5000]};
-	case "261A": {_type = ["Attempted Rape",3000]};
-	case "215": {_type = ["Attempted Auto Theft",2000]};
-	case "213": {_type = ["Use of illegal explosives",10000]};
-	case "211": {_type = ["Robbery",1000]};
-	case "211A": {_type = ["Armed Robbery",11000]};
+	case "187": {_type = ["Murder",25000]};
 	case "207": {_type = ["Kidnapping",10000]};
 	case "207A": {_type = ["Attempted Kidnapping",2000]};
+	case "211": {_type = ["Robbery",5000]};
+	case "211A": {_type = ["Armed Robbery",11000]};
+	case "242": {_type = ["Battery",2500]};
+	case "245": {_type = ["Assault with a Deadly Weapon",15000]};
+	case "261": {_type = ["Rape",5000]};
+	case "261A": {_type = ["Attempted Rape",3000]};
+	case "459": {_type = ["Burglary",9000]};
+	case "459": {_type = ["Attempted Burglary",1500]};
+	case "480": {_type = ["Vehicular Manslaughter",15000]};
+	case "481": {_type = ["Hit and run",6500]};
 	case "487": {_type = ["Grand Theft",5000]};
 	case "488": {_type = ["Petty Theft",700]};
-	case "480": {_type = ["Hit and run",1300]};
-	case "481": {_type = ["Drug Possession",1000]};
-	case "482": {_type = ["Intent to distribute",5000]};
-	case "483": {_type = ["Drug Trafficking",9500]};
-	case "498H": {_type = ["Attempted Burglary",1500]};
-	case "499H": {_type = ["Burglary",9000]};
+	case "503": {_type = ["Attempted Auto Theft",2000]};
+	case "901": {_type = ["Escaping Jail",4500]};
+	case "902": {_type = ["Drug Possession",1000]};
+	case "903": {_type = ["Intent to distribute",5000]};
+	case "904": {_type = ["Drug Trafficking",9500]};
 	default {_type = [_type,0]};
 };
 

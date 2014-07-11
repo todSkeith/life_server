@@ -24,8 +24,8 @@ switch(_type) do
 	case "245": {_type = ["Assault with a Deadly Weapon",15000]};
 	case "261": {_type = ["Rape",5000]};
 	case "261A": {_type = ["Attempted Rape",3000]};
-	case "459": {_type = ["Burglary",9000]};
-	case "459A": {_type = ["Attempted Burglary",1500]};
+	case "459": {_type = ["Burglary",2500]};
+	case "459A": {_type = ["Attempted Burglary",500]};
 	case "480": {_type = ["Vehicular Manslaughter",15000]};
 	case "481": {_type = ["Hit and run",6500]};
 	case "487": {_type = ["Grand Theft",5000]};

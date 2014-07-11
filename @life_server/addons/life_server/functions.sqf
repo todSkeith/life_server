@@ -73,6 +73,7 @@ compileFinal "
 	hint format[""You have deposited $%1 into your bank account"",[_val] call life_fnc_numberText];
 	[] call life_fnc_atmMenu;
 	[1,false] call life_fnc_sessionHandle;
+	[[player,position player],""life_fnc_wantedTrack"",false,false] spawn life_fnc_MP;
 ";
 
 fnc_bank_withdraw =
@@ -89,7 +90,7 @@ compileFinal "
 	hint format [""You have withdrawn $%1 from your bank account"",[_val] call life_fnc_numberText];
 	[] call life_fnc_atmMenu;
 	[1,false] call life_fnc_sessionHandle;
-	
+	[[player,position player],""life_fnc_wantedTrack"",false,false] spawn life_fnc_MP;
 ";
 
 fnc_bank_transfer =
@@ -115,6 +116,7 @@ compileFinal "
 	[] call life_fnc_atmMenu;
 	hint format[""You have transfered $%1 to %2.\n\nA tax fee of $%3 was taken for the wire transfer."",[_val] call life_fnc_numberText,name _unit,[_tax] call life_fnc_numberText];
 	[1,false] call life_fnc_sessionHandle;
+	[[player,position player],""life_fnc_wantedTrack"",false,false] spawn life_fnc_MP;
 ";
 
 publicVariable "fnc_bank_deposit";

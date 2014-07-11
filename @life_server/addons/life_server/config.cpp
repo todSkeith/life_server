@@ -89,6 +89,7 @@ class CfgFunctions
 			class wantedRemove {};
 			class wantedAdd {};
 			class wantedPunish {};
+			class wantedTrack {};
 		};
 		
 		class Jail_Sys

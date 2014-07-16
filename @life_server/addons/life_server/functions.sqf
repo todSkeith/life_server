@@ -241,7 +241,7 @@ compileFinal "
 	_to = ""The Police"";
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3016,true];};
 		
-	[[_msg,name player,1],""clientMessage"",true,false] spawn life_fnc_MP;
+	[[_msg,name player,1,position player],""clientMessage"",true,false] spawn life_fnc_MP;
 	[] call life_fnc_cellphone;
 	hint format[""You sent %1 a message: %2"",_to,_msg];
 	ctrlShow[3016,true];
@@ -255,7 +255,7 @@ compileFinal "
 	_to = ""The Medics"";
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3020,true];};
 		
-	[[_msg,name player,5],""clientMessage"",true,false] spawn life_fnc_MP;
+	[[_msg,name player,5,position player],""clientMessage"",true,false] spawn life_fnc_MP;
 	[] call life_fnc_cellphone;
 	hint format[""You sent %1 a message: %2"",_to,_msg];
 	ctrlShow[3020,true];
@@ -318,10 +318,11 @@ publicVariable "fnc_cell_textmedic";
 */
 clientMessage =
 compileFinal "
-	private[""_msg"",""_from"", ""_type""];
+	private[""_msg"",""_from"", ""_type"", ""_pos"", ""_posx", ""_posy", ""_loc""];
 	_msg = _this select 0;
 	_from = _this select 1;
 	_type = _this select 2;
+	_pos = _this select 3;
 	if(_from == """") exitWith {};
 	switch (_type) do
 	{
@@ -340,7 +341,20 @@ compileFinal "
 			if(side player != west) exitWith {};
 			private[""_message""];
 			_message = format[""---911 DISPATCH FROM %1: %2"",_from,_msg];
-			hint parseText format [""<t color='#316dff'><t size='2'><t align='center'>New Dispatch<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>All Officers<br/><t color='#33CC33'>From: <t color='#ffffff'>%1<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%2"",_from,_msg];
+			_posx = _pos select 0;
+			_posx = floor(_posx / 100);
+			switch (true) do {
+				case (_posx < 100): { _posx = format["0%1",_posx]; };
+				case (_posx < 10): { _posx = format["00%1",_posx]; };
+			};
+			_posy = _pos select 1;
+			_posy = floor(_posy / 100);
+			switch (true) do {
+				case (_posy < 100): { _posy = format["0%1",_posy]; };
+				case (_posy < 10): { _posy = format["00%1",_posy]; };
+			};
+			_loc = format["%1%2",_posx,_posy];
+			hint parseText format [""<t color='#316dff'><t size='2'><t align='center'>New Dispatch<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>All Officers<br/><t color='#33CC33'>From: <t color='#ffffff'>%1<br/><t color='#33CC33'>Location: <t color='#ffffff'>%2<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%3"",_from,_msg,_loc];
 			
 			[""PoliceDispatch"",[format[""A New Police Report From: %1"",_from]]] call bis_fnc_showNotification;
 			systemChat _message;
@@ -386,7 +400,20 @@ compileFinal "
 			if(side player != independent) exitWith {};
 			private[""_message""];
 			_message = format[""---911 DISPATCH FROM %1: %2"",_from,_msg];
-			hint parseText format [""<t color='#316dff'><t size='2'><t align='center'>New Dispatch<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>All Medics<br/><t color='#33CC33'>From: <t color='#ffffff'>%1<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%2"",_from,_msg];
+			_posx = _pos select 0;
+			_posx = floor(_posx / 100);
+			switch (true) do {
+				case (_posx < 100): { _posx = format["0%1",_posx]; };
+				case (_posx < 10): { _posx = format["00%1",_posx]; };
+			};
+			_posy = _pos select 1;
+			_posy = floor(_posy / 100);
+			switch (true) do {
+				case (_posy < 100): { _posy = format["0%1",_posy]; };
+				case (_posy < 10): { _posy = format["00%1",_posy]; };
+			};
+			_loc = format["%1%2",_posx,_posy];
+			hint parseText format [""<t color='#316dff'><t size='2'><t align='center'>New Dispatch<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>All Medics<br/><t color='#33CC33'>From: <t color='#ffffff'>%1<br/><t color='#33CC33'>Location: <t color='#ffffff'>%2<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%3"",_from,_msg,_loc];
 			
 			[""PoliceDispatch"",[format[""A New Medic Request From: %1"",_from]]] call bis_fnc_showNotification;
 			systemChat _message;

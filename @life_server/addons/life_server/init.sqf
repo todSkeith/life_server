@@ -13,6 +13,26 @@ serv_sv_use = [];
 fed_bank setVariable["fed_rob_ip",false,true];
 fed_bank setVariable["fed_locked",false,true];
 
+gasman1 setVariable["robProgress",false, true];
+gasman2 setVariable["robProgress",false, true];
+gasman3 setVariable["robProgress",false, true];
+gasman4 setVariable["robProgress",false, true];
+
+gasman1 setVariable["gaswait",false, true];
+gasman2 setVariable["gaswait",false, true];
+gasman3 setVariable["gaswait",false, true];
+gasman4 setVariable["gaswait",false, true];
+
+gasman1 setVariable["robSuccess",false, true];
+gasman2 setVariable["robSuccess",false, true];
+gasman3 setVariable["robSuccess",false, true];
+gasman4 setVariable["robSuccess",false, true];
+
+gasman1 setVariable["robFail",false, true];
+gasman2 setVariable["robFail",false, true];
+gasman3 setVariable["robFail",false, true];
+gasman4 setVariable["robFail",false, true];
+
 //Run procedures for SQL cleanup on mission start.
 "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", "CALL resetLifeVehicles();",(call LIFE_SCHEMA_NAME)]; //Reset vehicles active state to false.
 "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", "CALL deleteDeadVehicles();",(call LIFE_SCHEMA_NAME)]; //Delete dead / non-usable vehicles for cleanup.

@@ -147,6 +147,7 @@ class CfgFunctions
 			file = "\life_server\core\ATM";
 			class atmAction {};
 			class nearATM {};
+			class robGasStation {};
 		};
 	};
 	class BRUUUDIS_System 

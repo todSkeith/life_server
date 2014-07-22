@@ -28,11 +28,6 @@ gasman2 setVariable["robSuccess",false, true];
 gasman3 setVariable["robSuccess",false, true];
 gasman4 setVariable["robSuccess",false, true];
 
-gasman1 setVariable["robFail",false, true];
-gasman2 setVariable["robFail",false, true];
-gasman3 setVariable["robFail",false, true];
-gasman4 setVariable["robFail",false, true];
-
 //Run procedures for SQL cleanup on mission start.
 "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", "CALL resetLifeVehicles();",(call LIFE_SCHEMA_NAME)]; //Reset vehicles active state to false.
 "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", "CALL deleteDeadVehicles();",(call LIFE_SCHEMA_NAME)]; //Delete dead / non-usable vehicles for cleanup.
@@ -87,9 +82,15 @@ publicVariable "life_fnc_fedSuccess";
 	{
 		sleep (30 * 60);
 		{
-			_x setVariable["sellers",[],true];
+		_x setVariable["sellers",[],true];
 		} foreach [Dealer_1,Dealer_2,Dealer_3];
+		
+		{
+		_x setVariable["Robbers",[],true];
+		} foreach [gasman1,gasman2,gasman3,gasman4];
+		
 	};
+		
 };
 
 //Strip NPC's of weapons

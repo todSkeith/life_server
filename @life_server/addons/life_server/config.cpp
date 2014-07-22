@@ -137,6 +137,7 @@ class CfgFunctions
 			class federalUpdate {};
 			class isUIDActive {};
 			class chopShopSell {};
+			class robGasStation {};
 		};
 	};	
 	class STS_Atms
@@ -147,7 +148,6 @@ class CfgFunctions
 			file = "\life_server\core\ATM";
 			class atmAction {};
 			class nearATM {};
-			class robGasStation {};
 		};
 	};
 	class BRUUUDIS_System 

@@ -16,7 +16,7 @@ switch (_side) do
 {	
 	case civilian:
 	{
-		_query = format["SELECT houses.position, houses.storage, houses.weapon_storage FROM houses WHERE pid='%1'",_uid];
+		_query = format["SELECT houses.position, houses.storage, houses.weapon_storage FROM houses WHERE pid='%1' AND occupied = '1'",_uid];
 		diag_log format ["queryPlayerHouses : %1", _query];
 		_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];
 		_sql = call compile format["%1", _sql];

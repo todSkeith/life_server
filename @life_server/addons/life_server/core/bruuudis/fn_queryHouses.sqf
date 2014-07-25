@@ -18,7 +18,7 @@ _ret = [];
 
 for[{_j = 0},{_j < _count},{_j = _j + 10}] do {
 
-	_query = format ["SELECT position, pid, storage, trunk, players.name FROM houses JOIN players ON houses.pid = players.playerid LIMIT %1, 10", _j];
+	_query = format ["SELECT position, pid, storage, trunk, players.name FROM houses JOIN players ON houses.pid = players.playerid WHERE houses.occupied = '1' LIMIT %1, 10", _j];
 
 	_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];
 	waitUntil {typeName _sql == "STRING"};

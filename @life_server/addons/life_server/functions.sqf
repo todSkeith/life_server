@@ -344,16 +344,16 @@ compileFinal "
 			_posx = _pos select 0;
 			_posx = floor(_posx / 100);
 			switch (true) do {
-				case (_posx < 100): { _posx = format["0%1",_posx]; };
-				case (_posx < 10): { _posx = format["00%1",_posx]; };
+				case (_posx < 100): { _posx = format[""0%1"",_posx]; };
+				case (_posx < 10): { _posx = format[""00%1"",_posx]; };
 			};
 			_posy = _pos select 1;
 			_posy = floor(_posy / 100);
 			switch (true) do {
-				case (_posy < 100): { _posy = format["0%1",_posy]; };
-				case (_posy < 10): { _posy = format["00%1",_posy]; };
+				case (_posy < 100): { _posy = format[""0%1"",_posy]; };
+				case (_posy < 10): { _posy = format[""00%1"",_posy]; };
 			};
-			_loc = format["%1%2",_posx,_posy];
+			_loc = format[""%1%2"",_posx,_posy];
 			hint parseText format [""<t color='#316dff'><t size='2'><t align='center'>New Dispatch<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>All Officers<br/><t color='#33CC33'>From: <t color='#ffffff'>%1<br/><t color='#33CC33'>Location: <t color='#ffffff'>%2<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%3"",_from,_msg,_loc];
 			
 			[""PoliceDispatch"",[format[""A New Police Report From: %1"",_from]]] call bis_fnc_showNotification;

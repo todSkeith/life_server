@@ -318,7 +318,7 @@ publicVariable "fnc_cell_textmedic";
 */
 clientMessage =
 compileFinal "
-	private[""_msg"",""_from"", ""_type"", ""_pos"", ""_posx", ""_posy", ""_loc""];
+	private[""_msg"",""_from"", ""_type"", ""_pos"", ""_posx"", ""_posy"", ""_loc""];
 	_msg = _this select 0;
 	_from = _this select 1;
 	_type = _this select 2;

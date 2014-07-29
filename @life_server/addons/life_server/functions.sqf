@@ -418,7 +418,7 @@ compileFinal "
 				case (_posy < 10): { _posy = format[""00%1"",_posy]; };
 			};
 			_loc = format[""%1%2"",_posx,_posy];
-			hint parseText format [""<t color='#316dff'><t size='2'><t align='center'>New Dispatch<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>All Medics<br/><t color='#33CC33'>From: <t color='#ffffff'>%1<br/><t color='#33CC33'>Location: <t color='#ffffff'>%2<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%3"",_from,_msg,_loc];
+			hint parseText format [""<t color='#316dff'><t size='2'><t align='center'>New Dispatch<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>All Medics<br/><t color='#33CC33'>From: <t color='#ffffff'>%1<br/><t color='#33CC33'>Message: <t color='#ffffff'>%2<br/><br/><t color='#33CC33'>Location: <br/><t color='#ffffff'>%3"",_from,_msg,_loc];
 
 			[""PoliceDispatch"",[format[""A New Medic Request From: %1"",_from]]] call bis_fnc_showNotification;
 			systemChat _message;

@@ -38,6 +38,17 @@ compileFinal "
 ";
 publicVariable "fnc_player_query";
 
+fnc_player_adminquery =
+compileFinal "
+	private[""_ret""];
+	_ret = _this select 0;
+	if(isNull _ret) exitWith {};
+	if(isNil ""_ret"") exitWith {};
+	
+	[[player,life_cash, life_atmCash, owner player, player],""stslap_fnc_admininfo"",_ret,false] spawn life_fnc_MP;
+";
+publicVariable "fnc_player_adminquery";
+
 /*
 fnc_player_query =
 compileFinal "
